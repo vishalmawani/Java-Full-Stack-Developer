@@ -3,6 +3,7 @@ package com.capgemini.healthcaresystem.dao;
 
 
 import com.capgemini.healthcaresystem.dto.Test;
+
 import com.capgemini.healthcaresystem.util.TestRepository;
 
 import java.util.ArrayList;
@@ -10,11 +11,12 @@ import java.util.List;
 
 public class TestDao {
 
-	
+	TestRepository testRepositoryObject = new TestRepository();
 
 
 	public String addTestDao(Test test) {
 		
+		//System.out.println(testRepositoryObject.getCenterIdTestListMap().computeIfPresent(userEnteredCenterIdDao(),(k,v)->v.add(test)));
 		return null;
 	}
 
@@ -28,10 +30,14 @@ public class TestDao {
 		
 		
 		
-		return true;//just for the sake of runnning ...
+		return true;
 	}
 
 	
+	
+public String userEnteredCenterIdDao(String cId) {
+	return cId;
+}
 	
 	
 	

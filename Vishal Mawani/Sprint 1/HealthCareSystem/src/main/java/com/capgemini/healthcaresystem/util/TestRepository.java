@@ -6,14 +6,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.TreeMap;
 
 public class TestRepository {
 	
-	static Map<String,String> centerIdCenterNameMap = new HashMap<String,String>();
-	static Map<String,List<Test>> centerIdTestListMap = new TreeMap<String,List<Test>>();
+	private static Map<String,String> centerIdCenterNameMap = new TreeMap<String,String>();
+	
+	private static Map<String,List<Test>> centerIdTestListMap = new TreeMap<String,List<Test>>();
 	
 	
+
+
 		public void makeCenterIdCenterNameMap() {
 			centerIdCenterNameMap.put("1001","AIMS");
 			centerIdCenterNameMap.put("1002","MAX");
@@ -57,12 +61,33 @@ public class TestRepository {
 			temp.add(t3);
 			return temp;
 			
+			
 		}
+
 		
+		public static Map<String, String> getCenterIdCenterNameMap() {
+		return centerIdCenterNameMap;
+	}
+
+	public static void setCenterIdCenterNameMap(Map<String, String> centerIdCenterNameMap) {
+		TestRepository.centerIdCenterNameMap = centerIdCenterNameMap;
+	}
+
+	public static Map<String, List<Test>> getCenterIdTestListMap() {
+		return centerIdTestListMap;
+	}
+
+	public static void setCenterIdTestListMap(Map<String, List<Test>> centerIdTestListMap) {
+		TestRepository.centerIdTestListMap = centerIdTestListMap;
+	}
 		
-		public Map<String,List<Test>> getListOfCenterIdTests(){
+	
+	/*public Map<String,List<Test>> getListOfCenterIdTests(){
 				return centerIdTestListMap;								// To return the list of tests.
-		}
+		}*/
+		
+		
+		
 		
 		public String getTestId() {
 																	//Method or function to generate testId automatically...
@@ -70,12 +95,24 @@ public class TestRepository {
 			return testObject.generateTestId();
 		}
 		
+		
+		
+		
 		public static void main(String arg[]) {
+			Test obj = new Test("110","abc");
 			TestRepository object = new TestRepository();
 			object.makeCenterIdCenterNameMap();
 			object.makeTestList();
 			System.out.println(centerIdCenterNameMap);
-			System.out.println(centerIdTestListMap);
+		//	System.out.println(centerIdTestListMap);
+			 for (Entry<String, List<Test>> entry : centerIdTestListMap.entrySet()) {
+		            String key = entry.getKey();
+		            List<Test> values = entry.getValue();
+		            System.out.println("Key = " + key);
+		            System.out.println("Values = " + values.add(obj));
+		            System.out.println("Values = " + values.get(3).getTestName());
+		        }
+			
 			
 		}
 		
