@@ -105,13 +105,13 @@ public class TestRepository {
 			object.makeTestList();
 			System.out.println(centerIdCenterNameMap);
 		//	System.out.println(centerIdTestListMap);
-			 for (Entry<String, List<Test>> entry : centerIdTestListMap.entrySet()) {
+			 /*for (Entry<String, List<Test>> entry : centerIdTestListMap.entrySet()) {
 		            String key = entry.getKey();
 		            List<Test> values = entry.getValue();
 		            System.out.println("Key = " + key);
 		            System.out.println("Values = " + values.add(obj));
 		            System.out.println("Values = " + values.get(3).getTestName());
-		        }
+		        }*/
 			
 			
 		}
