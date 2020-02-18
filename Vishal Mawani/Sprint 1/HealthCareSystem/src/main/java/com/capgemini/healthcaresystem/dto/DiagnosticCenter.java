@@ -7,7 +7,7 @@ public class DiagnosticCenter {
 	
 	private String centerName;
 	private String centerId;
-	public List<Test> listOfTests;
+	public List<DiagnosticTest> listOfTests;
 	public List<Appointment> appointmentList;
 	static int randomCenterId=1001;
 	//public List<DiagnosticCenter> centerList;
@@ -18,7 +18,7 @@ public class DiagnosticCenter {
 		
 	}
 	
-	public DiagnosticCenter(String centerName, String centerId, List<Test> listOfTests,
+	public DiagnosticCenter(String centerName, String centerId, List<DiagnosticTest> listOfTests,
 			List<Appointment> appointmentList) {
 		super();
 		this.centerName = centerName;
@@ -42,10 +42,10 @@ public class DiagnosticCenter {
 	public void setCenterId(String centerId) {
 		this.centerId = centerId;
 	}
-	public List<Test> getListOfTests() {
+	public List<DiagnosticTest> getListOfTests() {
 		return listOfTests;
 	}
-	public void setListOfTests(List<Test> listOfTests) {
+	public void setListOfTests(List<DiagnosticTest> listOfTests) {
 		this.listOfTests = listOfTests;
 	}
 	public List<Appointment> getAppointmentList() {

@@ -2,7 +2,7 @@ package com.capgemini.healthcaresystem.dao;
 
 
 
-import com.capgemini.healthcaresystem.dto.Test;
+import com.capgemini.healthcaresystem.dto.DiagnosticTest;
 import com.capgemini.healthcaresystem.ui.Ui;
 import com.capgemini.healthcaresystem.util.TestRepository;
 
@@ -16,14 +16,14 @@ public class TestDao {
 
 	
 
-	public String addTestDao(String cId,Test test) {
+	public String addTestDao(String cId,DiagnosticTest diagnosticTest) {
 		
-		 for (Entry<String, List<Test>> entry : TestRepository.getCenterIdTestListMap().entrySet()) {
+		 for (Entry<String, List<DiagnosticTest>> entry : TestRepository.getCenterIdTestListMap().entrySet()) {
 	            String key = entry.getKey();
 	            System.out.println(key);
 	            if(key.equals(cId)) {
-	            	List<Test> values = entry.getValue();
-	            	 values.add(test);
+	            	List<DiagnosticTest> values = entry.getValue();
+	            	 values.add(diagnosticTest);
 	            	 TestRepository.getCenterIdTestListMap().put(key, values);
 	            	 
 	            }
@@ -36,18 +36,32 @@ public class TestDao {
 
 
 
-	public boolean removeTestDao(Test test) {
+	public boolean removeTestDao(String cid,String testname,DiagnosticTest diagnosticTest) {
 		
-	
-		
-		return true;
+	return true;
 	}
 	
-	
-		
+	public List<String> getCenterIdTestListDao(String cid){
+		List<String> tempDao = new ArrayList<String>();
+		for (Entry<String, List<DiagnosticTest>> entry : TestRepository.getCenterIdTestListMap().entrySet()) {
+            String key = entry.getKey();
+            System.out.println(key);
+            if(key.equals(cid)) {
+            	List<DiagnosticTest> values = entry.getValue();
+            	for(int i=0;i<values.size();i++) {
+            		tempDao.add(values.get(i).getTestName());
+            	}
+	}
+		}
+		return tempDao;}
 	public Map<String,String> getCenterIdCenterNameMapDao() {
 	return TestRepository.getCenterIdCenterNameMap();
 	}
+	
+	
+            
+            
+		
 	
 	public String getTestIdDao() {
 		return TestRepository.getTestId();

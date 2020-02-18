@@ -1,6 +1,6 @@
 package com.capgemini.healthcaresystem.dto;
 
-public class Test {
+public class DiagnosticTest {
 
 	 private String testId;
 	 private String testName;
@@ -8,11 +8,11 @@ public class Test {
 	
 	// Constructor
 	
-	 public Test() {
+	 public DiagnosticTest() {
 		 
 	 }
 	 
-	public Test(String testId, String testName) {
+	public DiagnosticTest(String testId, String testName) {
 		super();
 		this.testId = testId;
 		this.testName = testName;

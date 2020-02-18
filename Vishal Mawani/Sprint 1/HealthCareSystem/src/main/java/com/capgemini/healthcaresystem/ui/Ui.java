@@ -3,7 +3,7 @@ package com.capgemini.healthcaresystem.ui;
 import java.util.Scanner;
 
 import com.capgemini.healthcaresystem.dao.TestDao;
-import com.capgemini.healthcaresystem.dto.Test;
+import com.capgemini.healthcaresystem.dto.DiagnosticTest;
 import com.capgemini.healthcaresystem.exception.NullCenterId;
 import com.capgemini.healthcaresystem.exception.NullTestValue;
 import com.capgemini.healthcaresystem.service.TestService;
@@ -31,19 +31,26 @@ public class Ui {
 		
 		
 		
-		try {	switch(getChoice()) {
+		try {	
+			switch(getChoice()) {
 		
 		case 1:
 			System.out.println(testServiceObject.getCenterIdCenterNameMapService());
-			Test temp = new Test(getTestId(),getTestName());
+			
+			DiagnosticTest temp = new DiagnosticTest(getTestId(),getTestName());
+			
 			String cid = getCenterId();
 			testServiceObject.addTestService(cid,temp);
-			
-			
 			break;
 			
 		case 2:
-			
+			System.out.println(testServiceObject.getCenterIdCenterNameMapService());
+			sc.nextLine();
+			String cid1 = getCenterId();
+			System.out.println(testServiceObject.getCenterIdTestListService(cid1));
+			String tname = getTestName();
+			DiagnosticTest temp1 = new DiagnosticTest(getTestId(),tname);
+			testServiceObject.removeTestService(cid1,tname,temp1);		
 			break;
 		
 		default:
@@ -61,6 +68,7 @@ public class Ui {
 		}
 		}
 
+	
 	
 	public int getChoice() {
 		int choice = sc.nextInt();

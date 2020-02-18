@@ -8,17 +8,17 @@ public class Appointment {
 
 	User user;
 	private BigInteger appointmentId;
-	Test test;
+	DiagnosticTest diagnosticTest;
 	private LocalDateTime datetime;
 	private boolean approved;
 	
 	// Constructor
 	
-	public Appointment(User user, BigInteger appointmentId, Test test, LocalDateTime datetime, boolean approved) {
+	public Appointment(User user, BigInteger appointmentId, DiagnosticTest diagnosticTest, LocalDateTime datetime, boolean approved) {
 		super();
 		this.user = user;
 		this.appointmentId = appointmentId;
-		this.test = test;
+		this.diagnosticTest = diagnosticTest;
 		this.datetime = datetime;
 		this.approved = approved;
 	}
@@ -37,11 +37,11 @@ public class Appointment {
 	public void setAppointmentId(BigInteger appointmentId) {
 		this.appointmentId = appointmentId;
 	}
-	public Test getTest() {
-		return test;
+	public DiagnosticTest getTest() {
+		return diagnosticTest;
 	}
-	public void setTest(Test test) {
-		this.test = test;
+	public void setTest(DiagnosticTest diagnosticTest) {
+		this.diagnosticTest = diagnosticTest;
 	}
 	public LocalDateTime getDatetime() {
 		return datetime;

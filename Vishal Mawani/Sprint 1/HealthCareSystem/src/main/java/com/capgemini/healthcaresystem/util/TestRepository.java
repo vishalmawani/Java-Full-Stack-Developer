@@ -1,7 +1,7 @@
 package com.capgemini.healthcaresystem.util;
 
 import com.capgemini.healthcaresystem.dto.DiagnosticCenter;
-import com.capgemini.healthcaresystem.dto.Test;
+import com.capgemini.healthcaresystem.dto.DiagnosticTest;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,7 +13,7 @@ public class TestRepository {
 	
 	private static Map<String,String> centerIdCenterNameMap = new TreeMap<String,String>();
 	
-	private static Map<String,List<Test>> centerIdTestListMap = new TreeMap<String,List<Test>>();
+	private static Map<String,List<DiagnosticTest>> centerIdTestListMap = new TreeMap<String,List<DiagnosticTest>>();
 	
 	
 
@@ -36,33 +36,33 @@ public class TestRepository {
 		
 		public void makeCenterIdTestListMap() {
 			
-			List<Test> listOfTests1 = new ArrayList<Test>();
+			List<DiagnosticTest> listOfTests1 = new ArrayList<DiagnosticTest>();
 			populateListOfTests(listOfTests1);
 			centerIdTestListMap.put("1001",listOfTests1);
 			
-			List<Test> listOfTests2 = new ArrayList<Test>();
+			List<DiagnosticTest> listOfTests2 = new ArrayList<DiagnosticTest>();
 			populateListOfTests(listOfTests2);
 			centerIdTestListMap.put("1002",listOfTests2);
 			
-			List<Test> listOfTests3 = new ArrayList<Test>();
+			List<DiagnosticTest> listOfTests3 = new ArrayList<DiagnosticTest>();
 			populateListOfTests(listOfTests3);
 			centerIdTestListMap.put("1003",listOfTests3);
 			
-			List<Test> listOfTests4 = new ArrayList<Test>();
+			List<DiagnosticTest> listOfTests4 = new ArrayList<DiagnosticTest>();
 			populateListOfTests(listOfTests4);
 			centerIdTestListMap.put("1004",listOfTests4);
 			
-			List<Test> listOfTests5 = new ArrayList<Test>();
+			List<DiagnosticTest> listOfTests5 = new ArrayList<DiagnosticTest>();
 			populateListOfTests(listOfTests5);
 			centerIdTestListMap.put("1005",listOfTests5);
 			
 		
 		}
 		
-		public List<Test> populateListOfTests(List<Test> temp){
-			Test t1 = new Test(getTestId(),"blood group");
-			Test t2 = new Test(getTestId(),"blood sugar");
-			Test t3 = new Test(getTestId(),"blood pressure");
+		public List<DiagnosticTest> populateListOfTests(List<DiagnosticTest> temp){
+			DiagnosticTest t1 = new DiagnosticTest(getTestId(),"blood group");
+			DiagnosticTest t2 = new DiagnosticTest(getTestId(),"blood sugar");
+			DiagnosticTest t3 = new DiagnosticTest(getTestId(),"blood pressure");
 			temp.add(t1);
 			temp.add(t2);
 			temp.add(t3);
@@ -79,7 +79,7 @@ public class TestRepository {
 
 		
 
-		public static Map<String, List<Test>> getCenterIdTestListMap() {
+		public static Map<String, List<DiagnosticTest>> getCenterIdTestListMap() {
 		return centerIdTestListMap;
 	}
 
@@ -90,7 +90,7 @@ public class TestRepository {
 		
 		public static String getTestId() {
 																	//Method or function to generate testId automatically...
-			Test testObject = new Test();
+			DiagnosticTest testObject = new DiagnosticTest();
 			return testObject.generateTestId();
 		}
 		
