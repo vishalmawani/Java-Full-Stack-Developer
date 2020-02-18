@@ -18,6 +18,13 @@ public class TestRepository {
 	
 
 
+		public TestRepository() {
+		
+			makeCenterIdCenterNameMap();
+			makeCenterIdTestListMap();
+			
+		}
+		
 		public void makeCenterIdCenterNameMap() {
 			centerIdCenterNameMap.put("1001","AIMS");
 			centerIdCenterNameMap.put("1002","MAX");
@@ -27,7 +34,7 @@ public class TestRepository {
 			
 		}
 		
-		public void makeTestList() {
+		public void makeCenterIdTestListMap() {
 			
 			List<Test> listOfTests1 = new ArrayList<Test>();
 			populateListOfTests(listOfTests1);
@@ -65,31 +72,23 @@ public class TestRepository {
 		}
 
 		
+		
 		public static Map<String, String> getCenterIdCenterNameMap() {
 		return centerIdCenterNameMap;
 	}
 
-	public static void setCenterIdCenterNameMap(Map<String, String> centerIdCenterNameMap) {
-		TestRepository.centerIdCenterNameMap = centerIdCenterNameMap;
-	}
+		
 
-	public static Map<String, List<Test>> getCenterIdTestListMap() {
+		public static Map<String, List<Test>> getCenterIdTestListMap() {
 		return centerIdTestListMap;
 	}
 
-	public static void setCenterIdTestListMap(Map<String, List<Test>> centerIdTestListMap) {
-		TestRepository.centerIdTestListMap = centerIdTestListMap;
-	}
 		
 	
-	/*public Map<String,List<Test>> getListOfCenterIdTests(){
-				return centerIdTestListMap;								// To return the list of tests.
-		}*/
 		
 		
 		
-		
-		public String getTestId() {
+		public static String getTestId() {
 																	//Method or function to generate testId automatically...
 			Test testObject = new Test();
 			return testObject.generateTestId();
@@ -98,39 +97,23 @@ public class TestRepository {
 		
 		
 		
-		public static void main(String arg[]) {
+	/*	public static void main(String arg[]) {
 			Test obj = new Test("110","abc");
 			TestRepository object = new TestRepository();
-			object.makeCenterIdCenterNameMap();
-			object.makeTestList();
-			System.out.println(centerIdCenterNameMap);
-		//	System.out.println(centerIdTestListMap);
-			 /*for (Entry<String, List<Test>> entry : centerIdTestListMap.entrySet()) {
+			
+			
+			System.out.println(centerIdTestListMap);
+			 for (Entry<String, List<Test>> entry : centerIdTestListMap.entrySet()) {
 		            String key = entry.getKey();
 		            List<Test> values = entry.getValue();
 		            System.out.println("Key = " + key);
 		            System.out.println("Values = " + values.add(obj));
 		            System.out.println("Values = " + values.get(3).getTestName());
-		        }*/
+		        }
 			
 			
-		}
+		}*/
 		
 			}
 		
-		
-
-
-/*Test t8 = new Test(getTestId(),"CT-scan");
-Test t9 = new Test(getTestId(),"Eye Test");
-Test t10= new Test(getTestId(),"DNA test");
-Test t11= new Test(getTestId(),"MRI Scan");
-Test t12 = new Test(getTestId(),"Full Body Checkup");
-Test t13= new Test(getTestId(),"Liver Function Test");
-listOfTests.add(t8);
-		listOfTests.add(t9);
-		listOfTests.add(t10);
-		listOfTests.add(t11);
-		listOfTests.add(t12);
-		listOfTests.add(t13);*/
 
