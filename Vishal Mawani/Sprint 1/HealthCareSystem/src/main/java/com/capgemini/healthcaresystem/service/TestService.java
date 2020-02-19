@@ -1,9 +1,5 @@
 package com.capgemini.healthcaresystem.service;
 
-import java.util.List;
-
-import java.util.Map;
-
 import com.capgemini.healthcaresystem.dao.TestDao;
 import com.capgemini.healthcaresystem.dto.DiagnosticTest;
 import com.capgemini.healthcaresystem.exception.NullCenterId;
@@ -25,7 +21,7 @@ public class TestService {
 			throw new NullTestValue("Test object passed is null");
 		}
 		testDaoObject.addTestDao(cId,diagnosticTest);
-		return "abc";
+		return "added successfully";
 	}
 
 	
@@ -44,21 +40,6 @@ public class TestService {
 		return "called testDao remove";
 	}
 	
-
-	
-	
-//	public List<String> getCenterIdTestListService(String cid) throws NullCenterId{
-//		if(cid.isEmpty()) {
-//			throw new NullCenterId("Center Id is passed null");
-//		}
-//		
-//		return testDaoObject.getCenterIdTestListDao(cid);
-//		
-//	}
-	
-//	public Map<String,String> getCenterIdCenterNameMapService() {
-//		return testDaoObject.getCenterIdCenterNameMapDao();
-//	}
 	
 	
 	public String getTestIdService() {

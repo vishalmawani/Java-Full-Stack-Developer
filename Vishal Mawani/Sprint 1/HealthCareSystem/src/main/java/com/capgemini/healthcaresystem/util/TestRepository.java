@@ -8,16 +8,16 @@ import java.util.TreeMap;
 
 public class TestRepository {
 	
-	private static Map<String,String> centerIdCenterNameMap = new TreeMap<String,String>();
+	private static Map<String,String> centerIdCenterNameMap = new TreeMap<>();
 	
-	private static Map<String,List<DiagnosticTest>> centerIdTestListMap = new TreeMap<String,List<DiagnosticTest>>();
+	private static Map<String,List<DiagnosticTest>> centerIdTestListMap = new TreeMap<>();
 	 static int randomTestId=100;
 	
 
 
 		public TestRepository() {
 		
-			makeCenterIdCenterNameMap();
+			makeCenterIdCenterNameMap();    //Constructor calling functions to populate the repository...
 			makeCenterIdTestListMap();
 			
 		}
@@ -25,7 +25,7 @@ public class TestRepository {
 		public void makeCenterIdCenterNameMap() {
 			centerIdCenterNameMap.put("1001","AIMS");
 			centerIdCenterNameMap.put("1002","MAX");
-			centerIdCenterNameMap.put("1003","APOLO");
+			centerIdCenterNameMap.put("1003","APOLO");					// Center name and center id...
 			centerIdCenterNameMap.put("1004","FORTIS");
 			centerIdCenterNameMap.put("1005","TRAUMA CENTER");
 			
@@ -41,7 +41,7 @@ public class TestRepository {
 			populateListOfTests(listOfTests2);
 			centerIdTestListMap.put("1002",listOfTests2);
 			
-			List<DiagnosticTest> listOfTests3 = new ArrayList<>();
+			List<DiagnosticTest> listOfTests3 = new ArrayList<>();				// Center name and corresponding list of tests...
 			populateListOfTests(listOfTests3);
 			centerIdTestListMap.put("1003",listOfTests3);
 			
@@ -60,7 +60,7 @@ public class TestRepository {
 			DiagnosticTest t1 = new DiagnosticTest(getTestId(),"blood group");
 			DiagnosticTest t2 = new DiagnosticTest(getTestId(),"blood sugar");
 			DiagnosticTest t3 = new DiagnosticTest(getTestId(),"blood pressure");
-			temp.add(t1);
+			temp.add(t1);						// Generating list of test for every center...
 			temp.add(t2);
 			temp.add(t3);
 			return temp;
@@ -69,15 +69,11 @@ public class TestRepository {
 		}
 
 		
-		
-//		public static Map<String, String> getCenterIdCenterNameMap() {
-//		return centerIdCenterNameMap;
-//	}
 
 		
 
 		public static Map<String, List<DiagnosticTest>> getCenterIdTestListMap() {
-		return centerIdTestListMap;
+		return centerIdTestListMap;						
 	}
 
 		

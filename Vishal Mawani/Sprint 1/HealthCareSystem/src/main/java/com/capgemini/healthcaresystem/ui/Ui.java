@@ -38,7 +38,7 @@ public class Ui {
 			DiagnosticTest temp = new DiagnosticTest(null,getTestName());
 			
 			String cid = getCenterId();
-			testServiceObject.addTestService(cid,temp);
+			System.out.println(testServiceObject.addTestService(cid,temp));
 			break;
 			
 		case 2:
@@ -49,7 +49,7 @@ public class Ui {
 			String tid = getTestIdUser();
 			String tname = getTestName();
 			DiagnosticTest temp1 = new DiagnosticTest(tid,tname);
-			testServiceObject.removeTestService(cid1,temp1);		
+			System.out.println(testServiceObject.removeTestService(cid1,temp1));		
 			break;
 		
 		default:

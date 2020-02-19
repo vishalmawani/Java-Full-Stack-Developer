@@ -1,8 +1,6 @@
 package com.capgemini.healthcaresystem.dto;
 
 import java.util.List;
-
-import com.capgemini.healthcaresystem.util.TestRepository;
 public class DiagnosticCenter {
 	
 	private String centerName;
@@ -44,13 +42,13 @@ public class DiagnosticCenter {
 		return listOfTests;
 	}
 	public void setListOfTests(List<DiagnosticTest> listOfTests) {
-		this.listOfTests = listOfTests;
+		DiagnosticCenter.listOfTests = listOfTests;
 	}
 	public List<Appointment> getAppointmentList() {
 		return appointmentList;
 	}
 	public void setAppointmentList(List<Appointment> appointmentList) {
-		this.appointmentList = appointmentList;
+		DiagnosticCenter.appointmentList = appointmentList;
 	}
 
 	
