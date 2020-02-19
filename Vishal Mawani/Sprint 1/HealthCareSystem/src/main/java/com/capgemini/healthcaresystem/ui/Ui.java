@@ -1,8 +1,6 @@
 package com.capgemini.healthcaresystem.ui;
 
 import java.util.Scanner;
-
-import com.capgemini.healthcaresystem.dao.TestDao;
 import com.capgemini.healthcaresystem.dto.DiagnosticTest;
 import com.capgemini.healthcaresystem.exception.NullCenterId;
 import com.capgemini.healthcaresystem.exception.NullTestValue;
@@ -35,22 +33,23 @@ public class Ui {
 			switch(getChoice()) {
 		
 		case 1:
-			System.out.println(testServiceObject.getCenterIdCenterNameMapService());
+			//System.out.println(testServiceObject.getCenterIdCenterNameMapService());
 			
-			DiagnosticTest temp = new DiagnosticTest(getTestId(),getTestName());
+			DiagnosticTest temp = new DiagnosticTest(null,getTestName());
 			
 			String cid = getCenterId();
 			testServiceObject.addTestService(cid,temp);
 			break;
 			
 		case 2:
-			System.out.println(testServiceObject.getCenterIdCenterNameMapService());
+			//System.out.println(testServiceObject.getCenterIdCenterNameMapService());
 			sc.nextLine();
 			String cid1 = getCenterId();
-			System.out.println(testServiceObject.getCenterIdTestListService(cid1));
+			//System.out.println(testServiceObject.getCenterIdTestListService(cid1));
+			String tid = getTestIdUser();
 			String tname = getTestName();
-			DiagnosticTest temp1 = new DiagnosticTest(getTestId(),tname);
-			testServiceObject.removeTestService(cid1,tname,temp1);		
+			DiagnosticTest temp1 = new DiagnosticTest(tid,tname);
+			testServiceObject.removeTestService(cid1,temp1);		
 			break;
 		
 		default:
@@ -60,36 +59,40 @@ public class Ui {
 		}
 		}
 		
-		catch(NullTestValue e) {
-			System.out.println(e.getMessage());
-		}
-		catch(NullCenterId e) {
+		catch(NullTestValue | NullCenterId e) {
 			System.out.println(e.getMessage());
 		}
 		}
 
 	
 	
+	private String getTestIdUser() {
+		System.out.println("Enter test id:");
+		return sc.nextLine();
+	}
+
+
+
 	public int getChoice() {
-		int choice = sc.nextInt();
-		return choice;
+		return sc.nextInt();
 	}
 	
 	public String getCenterId() {
 		System.out.println("Enter Center Id:");
 		
-		String userInputCenterId = sc.nextLine();
-		return userInputCenterId;
+		return sc.nextLine();
+		 
 	}
 			
 	public String getTestId() {
 		return testServiceObject.getTestIdService();
 	}
+	
 	public String getTestName() {
 		System.out.println("Enter test name:");
 		sc.nextLine();
-		String userInputTestName = sc.nextLine();
-		return userInputTestName;
+		return sc.nextLine();
+		
 	}
 	
 }

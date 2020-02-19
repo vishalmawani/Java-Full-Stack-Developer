@@ -7,12 +7,10 @@ public class DiagnosticCenter {
 	
 	private String centerName;
 	private String centerId;
-	public List<DiagnosticTest> listOfTests;
-	public List<Appointment> appointmentList;
+	public static List<DiagnosticTest> listOfTests;
+	public static List<Appointment> appointmentList;
 	static int randomCenterId=1001;
-	//public List<DiagnosticCenter> centerList;
 	
-	// Constructor
 	
 	public DiagnosticCenter() {
 		
@@ -23,8 +21,8 @@ public class DiagnosticCenter {
 		super();
 		this.centerName = centerName;
 		this.centerId = centerId;
-		this.listOfTests = listOfTests;
-		this.appointmentList = appointmentList;
+		DiagnosticCenter.listOfTests = listOfTests;
+		DiagnosticCenter.appointmentList = appointmentList;
 	}
 	
 	// Getters and Setters

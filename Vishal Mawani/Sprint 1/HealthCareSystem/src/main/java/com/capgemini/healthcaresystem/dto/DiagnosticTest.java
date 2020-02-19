@@ -4,7 +4,7 @@ public class DiagnosticTest {
 
 	 private String testId;
 	 private String testName;
-	 static int randomTestId=100;
+	
 	
 	// Constructor
 	
@@ -33,10 +33,5 @@ public class DiagnosticTest {
 		this.testName = testName;
 	}
 	
-	public String generateTestId() {
-																//Method or function to generate testId automatically...
-randomTestId+=1;
-return Integer.toString(randomTestId);
 
-}
 }

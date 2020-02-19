@@ -30,26 +30,35 @@ public class TestService {
 
 	
 	
-	public boolean removeTestService(String cid,String testname,DiagnosticTest diagnosticTest) throws NullTestValue {
+	public String removeTestService(String cid,DiagnosticTest diagnosticTest) throws NullTestValue, NullCenterId {
+		
 		if(diagnosticTest == null) {
 			throw new NullTestValue("Test object passed is null");
 		}
-		testDaoObject.removeTestDao(cid,testname,diagnosticTest);
-		return true;
-	}
-	
-	public List<String> getCenterIdTestListService(String cid) throws NullCenterId{
+		
 		if(cid.isEmpty()) {
-			throw new NullCenterId("Center Id is passed null");
+			throw new NullCenterId("Center Id passed is null");
 		}
 		
-		return testDaoObject.getCenterIdTestListDao(cid);
-		
+		testDaoObject.removeTestDao(cid,diagnosticTest);
+		return "called testDao remove";
 	}
 	
-	public Map<String,String> getCenterIdCenterNameMapService() {
-		return testDaoObject.getCenterIdCenterNameMapDao();
-	}
+
+	
+	
+//	public List<String> getCenterIdTestListService(String cid) throws NullCenterId{
+//		if(cid.isEmpty()) {
+//			throw new NullCenterId("Center Id is passed null");
+//		}
+//		
+//		return testDaoObject.getCenterIdTestListDao(cid);
+//		
+//	}
+	
+//	public Map<String,String> getCenterIdCenterNameMapService() {
+//		return testDaoObject.getCenterIdCenterNameMapDao();
+//	}
 	
 	
 	public String getTestIdService() {
