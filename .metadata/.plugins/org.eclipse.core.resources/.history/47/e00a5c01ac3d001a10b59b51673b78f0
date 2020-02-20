@@ -1,0 +1,40 @@
+package ExceptionHandling;
+
+public class NestedTry {
+	
+	public static void main(String[] args) {
+		
+		int num1,num2=0;
+		int a[] = new int[3];
+		
+		try {
+			//num1 = 10/num2;
+			System.out.println(a[5]);
+			
+		try {
+			//num1 = 10/num2;
+			
+			System.out.println(a[5]);
+			
+		}
+		
+		catch(ArrayIndexOutOfBoundsException e) {
+			
+			System.out.println("Array size limit exceeded");
+		}	
+		
+		catch(ArithmeticException e) {
+			
+			System.out.println("Divide by zero");
+		}
+		
+		}
+		
+		finally {
+			
+			System.out.println("Finally class executed");
+		}
+
+	}
+
+}
