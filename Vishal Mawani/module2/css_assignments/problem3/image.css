@@ -1,0 +1,5 @@
+/*img[title]     { border: 1px solid red; }
+	
+	/*img[width]     { border: 10px solid blue; }*/
+
+    img[title|="emilia-clarke"] { border: 10px solid green; }
