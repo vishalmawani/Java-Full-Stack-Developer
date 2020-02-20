@@ -1,0 +1,33 @@
+package StringsInJava;
+
+import java.util.Scanner;
+
+public class NextConsonantString {
+
+	public char alterString(char[] s) {
+		for(int i=0; i<s.length;i++)
+		{
+			if(s[i]=='a'||s[i]=='e'||s[i]=='i'||s[i]=='o'||s[i]=='u')
+			{
+			}else
+			{
+			    s[i]=(char)((s[i])+1);
+			}
+			
+		}return s;
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter String");
+		String str = new String();
+		str = sc.nextLine();
+		char[] arr = str.toCharArray();
+		NextConsonantString obj = new NextConsonantString();
+		
+		System.out.println(obj.alterString(arr));
+		
+
+	}
+
+}

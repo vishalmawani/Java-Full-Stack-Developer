@@ -1,0 +1,24 @@
+package ExceptionHandling;
+
+public class TryCatch {
+
+	public static void main(String[] args) {
+		int num1, num2 = 0;
+		try {
+			
+			num1=42/num2;
+			System.out.println(num1);
+		}
+		
+		catch(ArithmeticException e) {
+			e.printStackTrace();
+			System.out.println("Divde by zero");
+		}
+		finally {
+			
+			System.out.println("This is in finally block");
+		}
+
+	}
+
+}

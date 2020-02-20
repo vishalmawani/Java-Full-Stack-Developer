@@ -1,0 +1,48 @@
+package ExceptionHandling;
+
+import java.util.Scanner;
+
+class MyException extends Exception{
+	public MyException(String s) {
+		super(s);
+	}
+}
+public class ValidateFullName {
+
+	public static void main(String[] args) {
+		String firstName,lastName;
+		Scanner sc = new Scanner(System.in);
+		
+		//System.out.println("Enter first name");
+		
+		firstName = sc.nextLine();
+		
+		//System.out.println("Enter lastname name");
+		
+		lastName = sc.nextLine();
+		
+		try {
+			if(firstName.isEmpty());
+			throw new MyException("First Name Cannnot Be Empty");
+			
+		}
+		catch(MyException e) {
+			System.out.println("Caught 1");
+			System.out.println(e.getMessage());
+			
+		}
+		
+		try {
+			if(lastName.isEmpty())
+			throw new MyException("Last Name Cannnot Be Empty");
+		}
+		catch(MyException e) {
+			System.out.println("Caught 2");
+			System.out.println(e.getMessage());
+			
+		}
+		
+
+	}
+
+}

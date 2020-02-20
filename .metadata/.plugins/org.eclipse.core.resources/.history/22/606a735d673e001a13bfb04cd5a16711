@@ -1,0 +1,19 @@
+package StringsInJava;
+
+public class MirrorImageOfString {
+	
+	public StringBuffer getImage(StringBuffer s) {
+		s.reverse();
+		return s;
+	}
+	
+	public static void main(String[] args) {
+		StringBuffer sb1 = new StringBuffer("VISHAL");
+		StringBuffer sb2 = new StringBuffer("");
+		MirrorImageOfString obj = new MirrorImageOfString();
+		
+		
+System.out.println(sb1 + "|" + obj.getImage(sb1););
+	}
+
+}
